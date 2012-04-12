@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test - grouping maker</title>
+
+ <style>
+ body {background: #333; color: #ddd;}
+ a:link { color: #fc0; }
+ a:hover { color: #fff; }
+ a:visited,a:active { color: #f80; }
+ </style>
+
+ </head><body>
+ <script>
+ // technique 1 - grouping selectors
+  var i, d, css = h = '';
+  for (i=0; i<1000; i++){
+   h += '<div id="div' + i + '">Type</div>';
+   css += '#div' + i + ' { color:';
+
+   css += (i%2 === 0) ? 'white; ' : '';
+   css += (i%2 === 1) ? 'black; ' : '';
+
+   css += 'background:'
+
+   css += (i%3 === 0) ? 'red; ' : '';
+   css += (i%3 === 1) ? 'green; ' : '';
+   css += (i%3 === 2) ? 'blue; ' : '';
+
+   css += 'border: 1px solid ';
+
+   css += (i%4 === 0) ? 'purple; } ' : '';
+   css += (i%4 === 1) ? 'fuchsia; } ' : '';
+   css += (i%4 === 2) ? 'aqua; } ' : '';
+   css += (i%4 === 3) ? 'yellow; } ' : '';
+  }
+
+  document.write('<style>' + css + '</style>' + h);
+ </script>
+
+</body></html>

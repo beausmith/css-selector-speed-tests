@@ -1,0 +1,50 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <title>test - grouping maker</title>
+
+     <style>
+     body {background: #333; color: #ddd;}
+     a:link { color: #fc0; }
+     a:hover { color: #fff; }
+     a:visited,a:active { color: #f80; }
+ 
+     /* OO CSS Classes */
+     .cw {color:white;}
+     .cb {color:black;}
+     .bgr {background:red;}
+     .bgg {background:green;}
+     .bgb {background:blue;}
+     .br {border-color:purple;}
+     .bf {border-color:fuchsia;}
+     .ba {border-color:aqua;}
+     .by {border-color:yellow;}
+     </style>
+
+     </head><body>
+     <script>
+     // technique 3 - object oriented css classes
+      var css, i, d, c = h = '';
+      for (i=0; i<1000; i++){
+       c = '';
+
+       c += (i%2 === 0) ? 'cw' : '';
+       c += (i%2 === 1) ? 'cb' : '';
+
+       c += (i%3 === 0) ? ' bgr' : '';
+       c += (i%3 === 1) ? ' bgg' : '';
+       c += (i%3 === 2) ? ' bgb' : '';
+
+       c += (i%4 === 0) ? ' br' : '';
+       c += (i%4 === 1) ? ' bf' : '';
+       c += (i%4 === 2) ? ' ba' : '';
+       c += (i%4 === 3) ? ' by' : '';
+
+       h += '<div class="' + c + '">Type</div>';
+      }
+
+      document.write(h);
+     </script>
+
+    </body></html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test - grouping maker</title>
+
+ <style>
+ body {background: #333; color: #ddd;}
+ a:link { color: #fc0; }
+ a:hover { color: #fff; }
+ a:visited,a:active { color: #f80; }
+ </style>
+
+ </head><body>
+ <script>
+ // technique 1 - grouping selectors
+  var css, i, d,
+  h = cw = cb = br = bg = bb = bp = bf = ba = by = '';
+  for (i=0; i<10000; i++){
+   d = '#div' + i + ', ';
+   h += '<div id="div' + i + '">Type</div>';
+
+   cw += (i%2 === 0) ? d : '';
+   cb += (i%2 === 1) ? d : '';
+
+   br += (i%3 === 0) ? d : '';
+   bg += (i%3 === 1) ? d : '';
+   bb += (i%3 === 2) ? d : '';
+
+   bp += (i%4 === 0) ? d : '';
+   bf += (i%4 === 1) ? d : '';
+   ba += (i%4 === 2) ? d : '';
+   by += (i%4 === 3) ? d : '';
+  }
+  css = cw.slice(0,-2) + ' {color:white;}' +
+        cb.slice(0,-2) + ' {color:black;}' +
+
+        br.slice(0,-2) + ' {background:red;}' +
+        bg.slice(0,-2) + ' {background:green;}' +
+        bb.slice(0,-2) + ' {background:blue;}' +
+
+        bp.slice(0,-2) + ' {border: 1px purple solid;}' +
+        bf.slice(0,-2) + ' {border: 1px fuchsia solid;}' +
+        ba.slice(0,-2) + ' {border: 1px aqua solid;}' +
+        by.slice(0,-2) + ' {border: 1px yellow solid;}';
+
+  document.write('<style>' + css + '</style>' + h);
+ </script>
+
+</body></html>
